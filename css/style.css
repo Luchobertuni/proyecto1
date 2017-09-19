@@ -1,3 +1,181 @@
+*{
+  box-sizing: border-box;
+}
 body{
-  background-color: green;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-image: url(../imagenes/fabric.png);
+  font-family: "Slabo" 27px, serif;
+}
+.contenedor{
+  margin: 0 auto;
+  max-width:1200px;
+  text-align: center;
+  overflow: hidden;
+  overflow-x: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  }
+  .logo{
+    border-radius: 120px;
+
+  }
+  .titulo{
+    font-family: fantasy;
+    background-color: white;
+  }
+  header{
+    width: 100%;
+  }
+  .menu-usuario {
+  float: left;
+  margin: 10px;
+  }
+  .menu-usurio ul li{
+    background-color: rgb(16, 157, 126);
+  }
+.menu-usuario li{
+  list-style: none;
+  text-align: justify;
+  border: 1px ;
+  margin: 2px;
+  background-color: rgb(94, 189, 214);
+padding: 7px;
+}
+.menu-usuario ul{
+
+}
+.menu-usuario a{
+  text-decoration: none;
+}
+.buscar{
+  width: 70px;
+}
+.menu-principal li{
+  list-style: none;
+  text-align: justify;
+  border: 1px ;
+  margin: 2px;
+  background-color: rgb(94, 189, 214);
+padding: 7px;
+}
+.menu-principal a{
+  text-decoration: none;
+}
+.menu-principal{
+float: right;
+margin: 10px;
+}
+a:hover{
+  text-decoration: underline;
+  color: rgb(228, 59, 227);
+}
+.menu-footer li{
+  list-style: none;
+  display: inline;
+  margin: 5px;
+}
+.menu-footer a{
+  text-decoration: none;
+}
+.menu-footer ul{
+  background-color: rgb(94, 189, 214);
+}
+.face{
+  margin-left: 15px;
+}
+.fotos li{
+  list-style: none;
+}
+.fotos ul{
+  padding: 0;
+}
+.arma{
+  margin-top: 60px;
+}
+a{
+  text-decoration: none;
+}
+@media(min-width:300px) {
+  .arma{
+    margin-top: 70px;
+  }
+.menu-principal li{
+  padding: 5px;
+}
+.menu-usuario li{
+  padding: 5px;
+  padding-left: 0;
+}
+}
+
+@media (min-width:640px) {
+  .menu-principal ul li{
+    display: inline-block;
+    float: none;
+  }
+  .menu-principal li{
+    text-align: center;
+    padding: 15px;
+  }
+  .arma{
+    margin-top: 70px;
+  }
+  .menu-usuario li{
+    text-align: center;
+    padding: 15px;
+  }
+  .menu-usuario ul li{
+    display: inline-block;
+    float: none;
+  }
+  .frase{
+    text-align: justify;
+  }
+}
+@media (min-width:900px) {
+
+  .menu-principal ul li{
+    display: inline-block;
+    float: none;
+  }
+
+  .menu-principal li{
+    text-align: center;
+    padding: 25px;
+  }
+  .arma{
+    margin-top: 90px;
+    }
+  .rutas{
+    text-align: justify;
+  }
+  .cajas{
+    border: 2px solid;
+    margin-top: 80px;
+  }
+
+  .menu-usuario li{
+    text-align: center;
+    padding: 20px;
+  }
+  .menu-usuario ul li{
+    display: inline-block;
+    float: none;
+  }
+  .fotos li{
+    display: inline-block;
+  }
+.imagen1{
+float: left;
+}
+.imagen2{
+  float: left;
+}
+.imagen3{
+  float: right;
+}
+
 }
