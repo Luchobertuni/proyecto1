@@ -25,6 +25,7 @@ body{
   .titulo{
     font-family: fantasy;
     background-color: white;
+    text-decoration: underline;
   }
   header{
     width: 100%;
@@ -132,7 +133,7 @@ a{
     float: none;
   }
   .frase{
-    
+
   }
 }
 @media (min-width:900px) {
