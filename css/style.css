@@ -59,7 +59,7 @@ padding: 7px;
   border: 1px ;
   margin: 2px;
   background-color: rgb(94, 189, 214);
-padding: 7px;
+  padding: 7px;
 }
 .menu-principal a{
   text-decoration: none;
@@ -132,7 +132,7 @@ a{
     float: none;
   }
   .frase{
-    text-align: justify;
+    
   }
 }
 @media (min-width:900px) {
@@ -150,7 +150,7 @@ a{
     margin-top: 90px;
     }
   .rutas{
-    text-align: justify;
+
   }
   .cajas{
     border: 2px solid;
