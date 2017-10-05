@@ -24,14 +24,15 @@
    //exit;
 
    if (isset($_SESSION["usuarioLogueado"])) {
-     echo"<li><a href='perfil.php'> Perfil </a></li>";
-     echo"<li><a href='logout.php'>Cerrar sesión </a> </li>";
+$usuario = traerPorEmail($_SESSION["usuarioLogueado"]);
+     ?> <li><a href='perfil.php'> Perfil: <?=$usuario["nombre"]?> </a></li>
+        <li><a href='logout.php'>Cerrar sesión </a> </li>
+<?php
    } else{
-    echo "<li><a href='logintrabajo.php'> login</a></li>";
+    echo "<li><a href='logintrabajo.php'> Iniciar sesión</a></li>";
 
  }
 ?>
-          <li> <a href="logintrabajo.php"> Iniciar sesión </a> </li>
           <li> <a href="formulariotrabajo.php"> Registrarse </a> </li>
           <form action="">
           <li>  <img src="./imagenes/lupa.png" width="20px" height="20px"> <input type="search" name="Buscador" class="buscar" value="buscar">  </li>

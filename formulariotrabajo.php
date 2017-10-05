@@ -63,7 +63,7 @@ if ($_POST){
         <input id="g1"type="radio" name="genero" value="masculino" required>
         <label for="g2">Femenino</label>
         <input id="g2"type="radio" name="genero" value="femenino"><br><br>
-
+        
       </div>
 
         <br>

@@ -9,7 +9,7 @@
   </head>
   <body>
     <header>
-        <h1><a href="trabajo.php"><img src="imagenes/logo.jpg" alt="logo del sitio"></a></h1>
+        <h1><a href="trabajo.php"><img src="./imagenes/logo.jpg" height="200px" width="200px" class="logo"></a></h1>
         <div class="titulo">
             <h2>Insta-Viaje</h2>
         </div>

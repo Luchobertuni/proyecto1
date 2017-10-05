@@ -9,6 +9,13 @@ body{
   background-image: url(../imagenes/fabric.png);
   font-family: "Slabo" 27px, serif;
   min-width: 300px;
+  text-align: center;
+}
+form{
+  display: inline;
+}
+form li{
+  border: 10px;
 }
 .contenedor{
   margin: 0 auto;

@@ -31,7 +31,7 @@ function validarInformacion($informacion){
   }else if ($informacion["password"] != $informacion["cpassword"]) {
     $arrayErrores["password"] = "La contraseña no verifica";
   }
-    
+
   return $arrayErrores;
 }
 function armarUsuario($informacion) {
