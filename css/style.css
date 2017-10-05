@@ -8,6 +8,7 @@ body{
   overflow-x: hidden;
   background-image: url(../imagenes/fabric.png);
   font-family: "Slabo" 27px, serif;
+  min-width: 300px;
 }
 .contenedor{
   margin: 0 auto;

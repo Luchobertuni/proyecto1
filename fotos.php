@@ -20,8 +20,8 @@
         <nav>
           <ul class="menu2">
   <!-- Agregar mas adelante perfil/ cuando inicia sesion -->
-            <li> <a href="logintrabajo.html"> Iniciar sesión </a> </li>
-            <li> <a href="formulariotrabajo.html"> Registrarse </a> </li>
+            <li> <a href="logintrabajo.php"> Iniciar sesión </a> </li>
+            <li> <a href="formulariotrabajo.php"> Registrarse </a> </li>
             <form action="">
             <li>  <img src="./imagenes/lupa.png" width="20px" height="20px"> <input type="search" name="Buscador" class="buscar" value="buscar">  </li>
             </form>
@@ -32,9 +32,9 @@
         <div class="menu-principal">
         <nav >
           <ul class="menu">
-            <li> <a href="trabajo.html"> Home </a> </li>
+            <li> <a href="trabajo.php"> Home </a> </li>
             <li> <a href=""> Contacto </a> </li>
-            <li> <a href="faqs.html"> FaQs </a> </li>
+            <li> <a href="faqs.php"> FaQs </a> </li>
         </ul>
         </nav>
       </div>
@@ -60,7 +60,7 @@
     <div class="menu-footer">
       <nav>
       <ul>
-        <li> <a href="trabajo.html">  Home </a> </li>
+        <li> <a href="trabajo.php">  Home </a> </li>
         <li> <a href="malito:instaviaje@gmail.com">  Contactanos! </a> </li>
         <li> <a href="#"> Redes </a> </li>
         <div>
@@ -75,11 +75,3 @@
     </div>
       </body>
     </html>
-=======
-    <title>Fotos</title>
-  </head>
-  <body>
-
-  </body>
-</html>
->>>>>>> 51d93f9d73e0572677e15d1b1c08c4d9a63be6bc

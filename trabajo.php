@@ -18,8 +18,21 @@
       <nav>
         <ul class="menu2">
 <!-- Agregar mas adelante perfil/ cuando inicia sesion -->
-          <li> <a href="logintrabajo.html"> Iniciar sesión </a> </li>
-          <li> <a href="formulariotrabajo.html"> Registrarse </a> </li>
+ <?php
+   require_once("funcion.php");
+   //var_dump($_SESSION);
+   //exit;
+
+   if (isset($_SESSION["usuarioLogueado"])) {
+     echo"<li><a href='perfil.php'> Perfil </a></li>";
+     echo"<li><a href='logout.php'>Cerrar sesión </a> </li>";
+   } else{
+    echo "<li><a href='logintrabajo.php'> login</a></li>";
+
+ }
+?>
+          <li> <a href="logintrabajo.php"> Iniciar sesión </a> </li>
+          <li> <a href="formulariotrabajo.php"> Registrarse </a> </li>
           <form action="">
           <li>  <img src="./imagenes/lupa.png" width="20px" height="20px"> <input type="search" name="Buscador" class="buscar" value="buscar">  </li>
           </form>
@@ -30,9 +43,9 @@
       <div class="menu-principal">
       <nav >
         <ul class="menu">
-          <li> <a href="trabajo.html"> Home </a> </li>
+          <li> <a href="trabajo.php"> Home </a> </li>
           <li> <a href=""> Contacto </a> </li>
-          <li> <a href="faqs.html"> FaQs </a> </li>
+          <li> <a href="faqs.php"> FaQs </a> </li>
       </ul>
       </nav>
     </div>
@@ -47,18 +60,18 @@
       <!-- caja 2 Arma tu viaje -->
       <div class="arma">
         <p class="frase" id="armalo">Arma tu viaje como mas te guste!!</p>
-        <a href="armalo.html" class="ver-mas"> <p> Ver mas </p> </a>
+        <a href="armalo.php" class="ver-mas"> <p> Ver mas </p> </a>
       </div>
       <!--caja 3 Recomendaciones  -->
       <div class="recomendacion">
         <p class="frase" id="recomendacion">Recomendacion acerca de los viajes realizados</p>
-<a href="recomendaciones.html" class="ver-mas"><p>Ver mas sobre recomendaciones</p></a>
+<a href="recomendaciones.php" class="ver-mas"><p>Ver mas sobre recomendaciones</p></a>
       </div>
       <!--rutas  -->
       <div class="rutas">
         <p class="frase" id="rutas">Rutas y caminos por los que viajar</p>
   <img src="./imagenes/mapa-bicisenda-bs.jpg" class="rut">
-  <a href="rutas.html" class="ver-mas">  <p> Ver más sobre rutas y caminos </p> </a>
+  <a href="rutas.php" class="ver-mas">  <p> Ver más sobre rutas y caminos </p> </a>
       </div>
       <!--Fotos  -->
       <div class="fotos">
@@ -67,7 +80,7 @@
       <li>  <img src="./imagenes/bici-bs.jpg" height="250px" width="350px" class="imagen1">
                 <div>
                 <button class="button" type="button">
-                  <a href="fotos.html">
+                  <a href="fotos.php">
                   <p> Ver más fotos </p> </a>
                 </button>
                 </div>
@@ -75,7 +88,7 @@
       <li>  <img src="./imagenes/bici-euro.jpg" height="250px" width="350px" class="imagen2">
         <div>
         <button class="button" type="button">
-          <a href="fotos.html">
+          <a href="fotos.php">
           <p> Ver más fotos </p> </a>
         </button>
         </div>
@@ -83,7 +96,7 @@
       <li>  <img src="./imagenes/bicis-bs.jpg" height="250px" width="350x" class="imagen3">
         <div>
         <button class="button" type="button">
-          <a href="fotos.html">
+          <a href="fotos.php">
           <p> Ver más fotos </p> </a>
         </button>
         </div>
@@ -96,7 +109,7 @@
     <div class="menu-footer">
       <nav>
       <ul>
-        <li> <a href="trabajo.html">  Home </a> </li>
+        <li> <a href="trabajo.php">  Home </a> </li>
         <li> <a href="malito:instaviaje@gmail.com">  Contactanos! </a> </li>
         <li> <a href="#"> Redes </a> </li>
         <div>
@@ -105,60 +118,6 @@
       </div>
     </ul>
   </nav>
-=======
-      <h1><img src="./imagenes/logo.png" height="200px" width="200px"> </h1>
-      <h2> Nombre de la pagina </h2>
-      <nav class="menu-principal">
-        <ul class="menu">
-          <li> <a href=""> </a> Contacto </li>
-          <li> <a href=""> </a> Transporte </li>
-          <li> <a href=""> </a> Transporte </li>
-      </ul>
-      </nav>
-      <div class="menu-usuario">
-      <nav>
-        <ul class="menu2">
-          <li> <a href="inicio-sesion.html"> </a> Login </li>
-          <li> <a href="perfil.html"> </a> Perfil </li>
-          <!--Poner lupa de buscador -->
-          <li> Buscar </li>
-      </ul>
-      </nav>
-    </div>
-    </header>
-<!-- caja 1 Viajes programados-->
-      <div class="programados">
 
-      </div>
-      <!-- caja 2 Arma tu viaje -->
-      <div class="arma">
-        <a href="armalo.html"> </a>
-      </div>
-      <!--caja 3 Recomendaciones  -->
-      <div class="recomendacion">
-
-      </div>
-      <!--rutas  -->
-      <div class="rutas">
-
-  <a href="rutas.html">  <p> Ver más </p> </a>
-      </div>
-      <!--Fotos  -->
-      <div class="fotos">
-        <img src="./iamgenes/bici-bs.jpg" height="100px" width="100px">
-        <img src="./imagenes/bici-euro.jpg" height="100px" width="100px">
-        <img src="./imagenes/bicis-bs.jpg" height="100px" width="100x">
-  <a href="fotos.html">  <p> Ver más </p> </a>
-      </div>
-  <footer>
-    <div>
-      <ul>
-      <li> Contacto </li>
-    </ul>
->>>>>>> 51d93f9d73e0572677e15d1b1c08c4d9a63be6bc
-  </div>
-
-  </footer>
-</div>
   </body>
 </html>
