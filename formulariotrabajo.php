@@ -16,7 +16,7 @@ if ($_POST){
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Insta-Viaje - <Registro></Registro></title>
+    <title>Insta-Viaje - Registro</title>
     <link rel="stylesheet" href="css/styleproyecto.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
@@ -29,7 +29,7 @@ if ($_POST){
         </div>
     </header>
       <h3>Regístrate</h3>
-    <form class="formulario" action="formulariotrabajo.php" method="POST">
+    <form class="formulario" action="formulariotrabajo.php" method="POST" enctype="multipart/form-data">
 
       <?php if(count($arrayErrores) > 0) :?>
         <ul style="color:red">
@@ -59,11 +59,14 @@ if ($_POST){
         <label for="cpassword">Confirmar Contraseña</label>
         <input id="cpassword"type="password" name="cpassword"><br><br>
 
+        <label for="avatar"><p>Foto de Perfil</p></label>
+        <input type="file" name="avatar" id="avatar" value="">
+
         <label for="g1">Masculino</label>
         <input id="g1"type="radio" name="genero" value="masculino" required>
         <label for="g2">Femenino</label>
         <input id="g2"type="radio" name="genero" value="femenino"><br><br>
-        
+
       </div>
 
         <br>

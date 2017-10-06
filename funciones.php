@@ -32,16 +32,38 @@ function validarInformacion($informacion){
     $arrayErrores["password"] = "La contraseña no verifica";
   }
 
+
+$errorDeLaFoto = $_FILES["avatar"]["error"];
+$nombreDeLaFoto = $_FILES["avatar"]["name"];
+$extension = pathinfo($nombreDeLaFoto, PATHINFO_EXTENSION);
+
+if ($errorDeLaFoto != UPLOAD_ERR_OK) {
+  $arrayErrores["avatar"] = "Error al cargar la imagen";
+}
+else if ($extension != "jpg" && $extension != "jpeg" && $extension != "png" && $extension != "gif") {
+  $arrayErrores["avatar"] = "Formato de imagen incorrecta";
+}
+else if($_FILES["avatar"]["error"] == UPLOAD_ERR_OK){
+  $origen = $_FILES["avatar"]["tmp_name"];
+
+  $ext = pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION);
+  $nombreDeLaImagen = $_POST["e-mail"] . "." . $ext;
+  $destino = __DIR__ . "/imagenes/" . $nombreDeLaImagen;
+  move_uploaded_file($origen, $destino);
+}
   return $arrayErrores;
 }
 function armarUsuario($informacion) {
-  return [
+  $ext = pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION);
+  $nombreDeLaImagen = $_POST["e-mail"] . "." . $ext;
+    return [
     "nombre" => $informacion["nombre"],
     "apellido" => $informacion["apellido"],
     "e-mail" => $informacion["e-mail"],
     "re-mail" => $informacion["re-mail"],
     "password" => password_hash($informacion["password"], PASSWORD_DEFAULT),
-    "genero" => $informacion["genero"]
+    "genero" => $informacion["genero"],
+    "avatar" => $nombreDeLaImagen
   ];
 }
 

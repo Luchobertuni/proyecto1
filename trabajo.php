@@ -30,10 +30,11 @@ $usuario = traerPorEmail($_SESSION["usuarioLogueado"]);
 <?php
    } else{
     echo "<li><a href='logintrabajo.php'> Iniciar sesión</a></li>";
+    echo "<li> <a href='formulariotrabajo.php'> Registrarse </a> </li>";
 
  }
 ?>
-          <li> <a href="formulariotrabajo.php"> Registrarse </a> </li>
+
           <form action="">
           <li>  <img src="./imagenes/lupa.png" width="20px" height="20px"> <input type="search" name="Buscador" class="buscar" value="buscar">  </li>
           </form>

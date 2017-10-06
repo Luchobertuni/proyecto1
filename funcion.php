@@ -44,11 +44,9 @@ function traerPorEmail($email)
     if($usuario["e-mail"]==$email)
     {
       return $usuario;
-    } else
-    {
-      return null;
     }
   }
+  return null;
 }
 function validarLogin($info){
   $errores = [];
