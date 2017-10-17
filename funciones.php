@@ -68,8 +68,20 @@ function armarUsuario($informacion) {
 }
 
 function guardarUsuario($usuario) {
-  $usuarioJSON = json_encode($usuario);
-  file_put_contents("usuario.json", $usuarioJSON . PHP_EOL, FILE_APPEND);
+global $db;
+$sql = "Insert into usuarios values (default, :e-mail, :password, :genero, :nombre)"
+$query = $db->prepare($sql);
+
+$query->bindValue(":e-mail",$usuario["e-mail"]);
+$query->bindValue(":password",$usuario["password"]);
+$query->bindValue(":genero",$usuario["genero"]);
+$query->bindValue(":nombre",$usuario["nombre"]);
+
+$query->execute();
+
+$usuario["id"] = $db->lastInsertId();
+
+return $usuario;
 }
 
  ?>

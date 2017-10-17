@@ -25,28 +25,26 @@ function recordarUsuario($email) {
   setcookie("usuarioLogueado", $email, time() + 360*24*7);
 }
 function traerTodos(){
-  $archivo =file_get_contents("usuario.json");
-  $array =explode(PHP_EOL, $archivo);
-  array_pop($array);
-
-  $ultimoArray=[];
-  foreach ($array as $usuario )
-{
-    $ultimoArray[] = json_decode($usuario, true);
-  }
-  return $ultimoArray;
+global $db;
+$sql = "Select * from usuarios";
+$query = $db->prepare($sql);
+$query->execute();
+$final = $query->fetchAll(PDO::FETCH_ASSOC);
 }
 function traerPorEmail($email)
 {
-  $todos=traerTodos();
-  foreach ($todos as $usuario )
-  {
-    if($usuario["e-mail"]==$email)
-    {
-      return $usuario;
-    }
-  }
-  return null;
+  global $db;
+  $sql = "Select * from usuarios where e-mail = :e-mail";
+
+  $query = $db->prepare($sql);
+
+  $query->bindValue(":e-mail", $email);
+
+  $query->execute();
+
+  $usuario = $query->fetch(PDO::FETCH_ASSOC);
+
+  return $usuario;
 }
 function validarLogin($info){
   $errores = [];
