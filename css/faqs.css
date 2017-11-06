@@ -1,0 +1,57 @@
+html, body{
+  margin: 0;
+  border: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+*{
+  box-sizing: border-box;
+}
+
+body{
+    background-image: url(../imagenes/fabric.png);
+    margin: 0 auto;
+    min-width: 460px;
+    font-family: "Slabo" 27px, serif;
+}
+header{
+  top: 0;
+  overflow: hidden;
+  height: 130px;
+  width: 100%;
+  z-index: 10;
+}
+h1{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+img{
+  border-radius: 120px;
+  width: 120px;
+}
+.titulo{
+  position: relative;
+  background-color: white;
+  top: 38px;
+  left: 106px;
+  overflow: hidden;
+  width: 100%;
+font-family: fantasy;
+}
+  h2{
+    margin-left: 35px;
+    text-decoration: underline;
+}
+
+.preguntas{
+  border: solid 2px;
+  margin: 25px;
+  padding: 5px;
+}
+h3{
+  margin: 10px;
+}
+h3 p{
+  margin: 15px;
+}

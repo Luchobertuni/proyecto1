@@ -1,0 +1,58 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+  border: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-image: url(../imagenes/background.png);
+  font-family: "Scada", sans-serif;
+}
+.contenedor{
+  margin: 0 auto;
+  max-width:1200px;
+  text-align: center;
+  overflow: hidden;
+  overflow-x: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  }
+  .logo{
+    border-radius: 120px;
+  }
+  .titulo{
+    font-family: fantasy;
+  }
+  .menu-usuario {
+  float: left;
+  margin: 10px;
+  }
+.menu-usuario li{
+  list-style: none;
+  text-align: justify;
+}
+.menu-usuario ul{
+
+}
+.menu-usuario a{
+  text-decoration: none;
+}
+.buscar{
+  width: 70px;
+}
+.menu-principal li{
+  list-style: none;
+  text-align: justify;
+}
+.menu-principal a{
+  text-decoration: none;
+}
+.menu-principal{
+float: right;
+margin: 10px;
+}
+a:hover{
+  text-decoration: underline;
+  color: rgb(228, 59, 227);
+}
