@@ -1,5 +1,6 @@
 <?php
 include("clases/validator.php");
+//include("clases/usuario.php");
 require_once("clases/dbmysql.php");
 
 $arrayErrores = [];
@@ -8,13 +9,24 @@ if ($_POST){
   $arrayErrores = $validador->validarInformacion($_POST);
   if (count($arrayErrores) == 0){
     $usuario = $validador->armarUsuario($_POST);
-      var_dump($usuario);
-    $usuario_final = new Usuario($usuario["email"],$usuario["nombre"],$usuario["apellido"],$usuario["remail"],$usuario["password"]);
+       //var_dump($usuario);exit;
+    $usuario_final = new Usuario($usuario["email"],$usuario["password"],$usuario["first_name"],$usuario["last_name"],$usuario["remail"]);
+//VAR_DUMP($usuario_final);exit;
+  //$usuario_arrary =  tos($usuario_final);
+  //$usuario_array = $usuario_final;
+    //echo "hola"; //$usuario_final->toArray();
+  //  var_dump(json_decode($usuario_final ));exit;
 
-    //var_dump($usuario_final);
-
-    //exit;
-  //  Objeto->guardarUsuario($usuario);
+  //$array= json_decode(json_encode($usuario_final), TRUE);
+  // var_dump($array);
+  // exit;
+   $objeto = new dbmysql;
+  //
+  // var_dump($usuario_final);
+  // //exit;
+  //   echo "<br><br>";
+  $objeto->guardarUsuario($usuario_final);
+  //var_dump($usuario);exit;
 
       header("location:index.php");exit;
   }
@@ -50,10 +62,10 @@ if ($_POST){
 
 
         <label for="nombre">Nombre</label>
-        <input id="nombre"type="text" name="nombre" value= "<?php if(isset($_POST["nombre"])){ echo $_POST["nombre"];}?>"required><br><br>
+        <input id="first_name"type="text" name="first_name" value= "<?php if(isset($_POST["nombre"])){ echo $_POST["nombre"];}?>"required><br><br>
 
         <label for="apellido">Apellido</label>
-        <input id="username"type="text" name="apellido" value="<?php if(isset($_POST["apellido"])){ echo $_POST["apellido"];}?>"required><br><br>
+        <input id="last_name"type="text" name="last_name" value="<?php if(isset($_POST["apellido"])){ echo $_POST["apellido"];}?>"required><br><br>
 
         <label for="email">email</label>
         <input id="email"type="email" name="email" value="<?php if(isset($_POST["email"])){ echo $_POST["email"];}?>" required><br><br>

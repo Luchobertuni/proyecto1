@@ -12,6 +12,6 @@ $auth = new Auth();
 
 $validator = new Validator();
 
-$db = new DbMySql();
+$db = new dbMySql();
 
  ?>

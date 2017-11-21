@@ -1,16 +1,16 @@
 <?php
  include_once("db.php");
- include_once("usuario.php");
+//include_once("usuario.php");
 
- class dbMySQL extends db {
+ class dbMySQL extends Db {
 
-   Private $db;
+   Public $db;
 
-   public function __contruct()
+   public function __construct()
    {
-     $dsn = 'mysql:host=localhost;charset=utfmb4;port=3306;database=instaviajes';
+     $dsn = 'mysql:host=localhost;charset=utf8mb4;port=3306;dbname=instaviaje';
      $user = "root";
-     $pass = "";
+     $pass = "root";
 
      try {
        $this->db = new PDO($dsn, $user, $pass);
@@ -18,22 +18,42 @@
        echo $e->getMessage();
      }
    }
-public function guardarUsuario($usuario) {
-  global $db;
-  $sql = "Insert into usuarios values (default, :email, :firstname, :lastname, :gender, :password)";
-  $query = $db->prepare($sql);
+public function guardarUsuario(Usuario $usuario) {
+  if($usuario->getId() == null){
+   $sql = "INSERT INTO user (email, first_name, last_name, password) VALUES (:email, :first_name, :last_name, :password)";
+//$sql = "Insert INTO user ( email, first_name, last_name, password) VALUES  ( 'diego@gmail.com', 'diego', 'Taras', '123456')";
+} else {
+  $sql = "INSERT INTO user (id, email, first_name, last_name, password) VALUES (:id, :email, :first_name, :last_name, :password)";
 
-  $query->bindValue(":email", $usuario["email"]);
-  $query->bindValue(":firstname", $usuario["firstname"]);
-  $query->bindValue(":lastname", $usuario["lastname"]);
-  $query->bindValue(":gender", $usuario["gender"]);
-  $query->bindValue(":password", $usuario["password"]);
+}
+  $query = $this->db->prepare($sql);
+
+
+  $query->bindValue(":email", $usuario->getEmail());
+  $query->bindValue(":first_name", $usuario->getFirst_name());
+  $query->bindValue(":last_name", $usuario->getLast_name());
+  $query->bindValue(":password", $usuario->getPassword());
+
+  // $query->bindValue(':email', $usuario['email'], PDO::PARAM_STR);
+  // $query->bindValue(':first_name', $usuario['first_name'], PDO::PARAM_STR);
+  // $query->bindValue(':last_name', $usuario['last_name'], PDO::PARAM_STR);
+  // $query->bindValue(':password', $usuario['password'], PDO::PARAM_STR);
+
+
+  if($usuario->getId() != NULL){
+    $query->bindValue(":id", $usuario->getId(), PDO::PARAM_INT);
+}
 
   $query->execute();
 
-  $usuario["id"] = $db->lastInsertId();
 
-  return $usuario;
+
+  // echo "<pre>";
+  // var_dump($query, $usuario);exit;
+ //var_dump($usuario);exit;
+ if ($usuario->getId() == null) {
+   $usuario->setId($this->db->lastInsertId());
+ }
 
 }
 public function traerTodos() {
@@ -49,6 +69,7 @@ public function traerPorEmail($email) {
 
   $query = $this->db->prepare($sql);
 
+
   $query->bindValue(":email", $email);
 
   $query->execute();
@@ -59,8 +80,3 @@ public function traerPorEmail($email) {
 }
 
  }
-
-
-
-
- ?>

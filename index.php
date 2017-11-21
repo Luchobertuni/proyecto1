@@ -1,9 +1,12 @@
+<?php session_start();
+ ?>
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width= device-width, initial-scale=1">
-    <link href="./css/style.css" rel="stylesheet"
+    <link href="./css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
     <title> Travels </title>
   </head>
@@ -19,14 +22,17 @@
         <ul class="menu2">
 <!-- Agregar mas adelante perfil/ cuando inicia sesion -->
  <?php
-   require_once("funcion.php");
+   require_once("clases/validator.php");
+   require_once("clases/usuario.php");
    //var_dump($_SESSION);
    //exit;
+   $validador = new Validator;
+  //  $usuario = new Usuario;
+   if ($validador->estaLogueado()){
+// $usuario = $validador->traerPorEmail($_SESSION["usuarioLogueado"]);
 
-   if (isset($_SESSION["usuarioLogueado"])) {
-$usuario = traerPorEmail($_SESSION["usuarioLogueado"]);
-     ?> <li><a href='perfil.php'> Perfil: <?=$usuario["nombre"]?> </a></li>
-        <li><a href='logout.php'>Cerrar sesión </a> </li>
+      ?> <li><a href='perfil.php'> Perfil: <?= $_SESSION["usuarioLogueado"] ?> </a></li>
+        <li><a href='logout.php'>Cerrar sesión</a> </li>
 <?php
    } else{
     echo "<li><a href='login.php'> Iniciar sesión</a></li>";

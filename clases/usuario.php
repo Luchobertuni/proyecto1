@@ -7,15 +7,26 @@ class Usuario {
 //  private $gender;
   // private $birth_date;
   private $password;
+  private $id;
 
-  public function __construct($id = NULL, $email, $first_name, $last_name, $password) {
-      $this->id = $id;
+  public function __construct( $email, $password, $first_name = null, $last_name = null, $remail = null, $id = NULL) {
+      if ($id !== null) {
+        $this->id = $id;
+      }
       $this->email = $email;
+      $this->password = $password;
       $this->first_name = $first_name;
       $this->last_name = $last_name;
+      $this->remail = $remail;
       //$this->birth_date = $birth_date;
-      $this->password = $password;
+
       //$this->gender = $gender;
+  }
+  public function setId($id){
+  $this->id = $id;
+  }
+  public function getId(){
+  return $this->id;
   }
 
 public function setFirst_name($first_name){
@@ -63,6 +74,10 @@ return $this->password;
     $destino = __DIR__ . "/imagenes/" . $nombreDeLaImagen;
     move_uploaded_file($origen, $destino);
   }
+  public function loguear(Usuario $usuario) {
+ //$usuario = new Usuario;
+   $_SESSION["usuarioLogueado"] = $usuario->getEmail();;
+ }
 }
 
  ?>

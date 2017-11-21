@@ -1,3 +1,50 @@
+<?php
+session_start();
+include("clases/db.php");
+include("clases/validator.php");
+require_once("clases/dbmysql.php");
+require_once("clases/usuario.php");
+$db = new dbMySQL;
+
+  $validador = new Validator;
+
+if ($validador->estaLogueado()) {
+  header("Location: index.php");
+}
+  $errores=[];
+  if ($_POST){//si viaja por post validar
+    //Primero que valide si hay algun error
+
+
+    $errores= $validador->validarLogin($_POST, $db);
+    // var_dump($errores);exit;
+
+    if(empty($errores))
+    {
+      // if (empty($errores))
+  		// {
+//$usuario = $repo->getRepositorioUsuarios()->traerUsuarioPorEmail($_POST["email"]);
+  		// 	$auth->loguear($usuario);
+    //  $usuarios = $db->traerPorEmail($_POST["email"]);
+        // var_dump($usuarios);exit;
+$usuario = new Usuario($_POST["email"],$_POST["password"]);
+      $validador->loguear($usuario);
+        // var_dump($validador);exit;
+    // if(isset($_POST["recordame"]))
+    // {
+    // recordarUsuario($_POST["email"]);
+    // }
+    if ($validador->estaEnFormulario("recordame"))
+    {
+      $validador->guardarCookie($usuario);
+    }
+    header("Location: index.php");exit;
+    }
+  }
+
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,30 +55,7 @@
     <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
   </head>
   <body>
-    <?php
-    include("clases/validator.php");
-    require_once("clases/dbmysql.php");
-      // if (estaLogueado()) {
-      //   header("Location: index.php");
-      // }
-      $errores=[];
-      if ($_POST){//si viaja por post validar
-        //Primero que valide si hay algun error
-        $validador = new Validator;
-        $errores= $validador->validarLogin($_POST);
-        if(count($errores)==0)
-        {
-          loguear($_POST["email"]);
-        if(isset($_POST["recordame"]))
-        {
-        recordarUsuario($_POST["email"]);
-        }
-        header("Location: login.php");exit;
-        }
-      }
 
-
-    ?>
     <header>
         <h1><a href="index.php"><img src="imagenes/logo.jpg" alt="logo del sitio"></a></h1>
         <div class="titulo">
