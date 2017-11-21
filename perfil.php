@@ -19,15 +19,9 @@
       <div class="menu-usuario">
       <nav>
         <ul class="menu2">
- <?php
-   require_once("funcion.php");
-   if (isset($_SESSION["usuarioLogueado"])) {
-    echo"<li><a href='logout.php'>Cerrar sesión </a> </li>";
-   } else{
-    echo "<li><a href='login.php'> Iniciar sesión</a></li>";
 
- }
-?>
+  <li><a href='logout.php'>Cerrar sesión</a> </li>"
+
           <form action="">
           <li>  <img src="./imagenes/lupa.png" width="20px" height="20px"> <input type="search" name="Buscador" class="buscar" value="buscar">  </li>
           </form>
