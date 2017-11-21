@@ -11,7 +11,9 @@
     <div class="contenedor">
     <div>
       <header>
+
       <h1><a href="index.php"><img src="./imagenes/logo.jpg" height="200px" width="200px" class="logo"></a></h1>
+
       <div class="titulo">
       <h2> Instaviaje </h2>
       </div>
@@ -19,8 +21,10 @@
         <nav>
           <ul class="menu2">
   <!-- Agregar mas adelante perfil/ cuando inicia sesion -->
+
             <li> <a href="login.php"> Iniciar sesión </a> </li>
             <li> <a href="registracion.php"> Registrarse </a> </li>
+
             <form action="">
             <li>  <img src="./imagenes/lupa.png" width="20px" height="20px"> <input type="search" name="Buscador" class="buscar" value="buscar">  </li>
             </form>
@@ -31,7 +35,9 @@
         <div class="menu-principal">
         <nav >
           <ul class="menu">
+
             <li> <a href="index.php"> Home </a> </li>
+
             <li> <a href=""> Contacto </a> </li>
             <li> <a href="faqs.php"> FaQs </a> </li>
         </ul>
@@ -59,7 +65,9 @@
     <div class="menu-footer">
       <nav>
       <ul>
+
         <li> <a href="index.php">  Home </a> </li>
+
         <li> <a href="malito:instaviaje@gmail.com">  Contactanos! </a> </li>
         <li> <a href="#"> Redes </a> </li>
         <div>
