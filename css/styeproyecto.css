@@ -1,0 +1,125 @@
+*{
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+}
+body{
+  margin: 0;
+  border: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: rgb(53, 144, 227);
+  font-family: "Slabo" 27px, serif;
+}
+header{
+text-align: center;
+width: 100%;
+}
+.buscar{
+  background-size: 24px;
+  width: 100px;
+  border: 2px solid;
+  border-radius: 10%;
+  padding: 10px 10px 10px 30px;
+  outline: none;
+  background-color: transparent;
+}
+.button{
+  position: absolute;
+}
+.imagen1{
+  position: relative;
+}
+.titulo{
+  margin-top: 1px;
+  font-family: fantasy;
+}
+.logo{
+  border-radius: 50%;
+  float: left;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+}
+.contenedor{
+  margin: 0 auto;
+  max-width:1180px;
+  text-align: center;
+  overflow: hidden;
+  overflow-x: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  }
+
+.menu-principal li{
+  text-transform: uppercase;
+  height: 50px;
+  font-size:0.9em;
+  float: left;
+  text-decoration: none;
+  display: inline;
+  padding: 50px;
+}
+.menu-principal ul {
+  list-style: none;
+  text-align: center;
+  margin: 30px;
+  overflow: hidden;
+  margin-top: 90px;
+}
+.menu-principal ul li{
+  list-style: none;
+  margin-bottom: 2px;
+  float:none;
+  background-color: rgb(214, 214, 213);
+  padding: 20px;
+  margin: 7px;
+  overflow: hidden;
+  padding: 50px;
+}
+.menu-principal a{
+text-decoration: none;
+display: inline-block;
+}
+.menu-usuario ul li{
+  list-style: none;
+  float: right;
+  padding: 10px;
+  margin: 10px;
+  overflow: hidden;
+  border-right: 1px solid black;
+}
+.menu-usuario ul{
+
+}
+.menu-usuario li{
+text-transform: capitalize;
+
+}
+.menu-usuario a{
+text-decoration: none;
+color: black;
+}
+.menu-usuario ul li:first-child{
+  border-right:0;
+}
+.menu-footer ul li{
+  list-style: none;
+
+}
+.menu-footer a{
+  text-decoration: none;
+
+}
+.menu-footer li{
+    display: inline;
+    margin: 10px;
+}
+.fotos li{
+  list-style: none;
+}
+
+@media (min-width:760px) {
+
+}
