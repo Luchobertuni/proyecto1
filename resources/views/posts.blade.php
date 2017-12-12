@@ -19,6 +19,7 @@
 <br><br>
   <p>Tus posts!</p>
     <div class="">
+      
       <ul>
         @foreach ($posts as $post)
         <a href="/post/{{$post->id}}"><li><p>Mi viaje a {{$post->lugar}}</p></li></a>
