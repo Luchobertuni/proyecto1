@@ -11,6 +11,36 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/home',function(){
+  return view('index');
 });
+Route::get('/',function(){
+  return view('index');
+});
+Route::get('/faqs', 'FaqsController@show');
+Route::get('/perfil', 'PerfilController@show');
+Route::get('/agregar','PostController@agregar');
+Route::post('/agregar','PostController@store');
+
+Route::get('/posts','PostController@mostrar');
+
+Route::get('/post/{id}','PostController@show');
+
+Route::delete('/post/{id}','PostController@destroy');
+
+
+Auth::routes();
+Route::get('/logout', 'Auth\LoginController@logout');
+
+//Route::get('/home', 'HomeController@index')->name('home');
+
+ // Route::get('/login2', function(){
+ //
+ //
+ // });
+//Route::get('/register', 'Auth\RegisterController@show');
+// Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+// Route::post('register', 'Auth\RegisterController@register');
