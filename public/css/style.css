@@ -11,6 +11,9 @@ body{
   min-width: 300px;
   text-align: center;
 }
+li{
+  list-style: none;
+}
 
 .lupa{
   display: inline;
@@ -137,6 +140,13 @@ a:hover{
 a{
   text-decoration: none;
 }
+.imagen{
+  border-radius: 120px;
+  width: 50px;
+  height: 50px;
+  float: left;
+  display: block;
+}
 @media(min-width:200px) {
   .menu-usuario{
     /*margin-right: 111px;*/
@@ -177,6 +187,13 @@ a{
   padding: 5px;
   padding-left: 0;
 }
+}
+.imagen{
+  width: 50px;
+  height: 50px;
+  border-radius: 120px;
+  float: left;
+  display: block;
 }
 
 @media (min-width:640px) {
@@ -227,6 +244,9 @@ a{
     text-align: center;
     padding: 15px;
   }
+.menu-footer ul{
+  display: -webkit-inline-box;
+}
   .arma{
     margin-top: 70px;
   }

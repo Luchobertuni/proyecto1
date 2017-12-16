@@ -6,6 +6,7 @@
     <title>Insta-Viaje - Login</title>
     <link rel="stylesheet" href="css/styleproyectologin.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="imagenes/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
   </head>
   <body>
@@ -25,7 +26,7 @@
 
         <label for="email">email</label>
         <div>
-        <input id="email"type="email" name="email"><br><br>
+        <input id="email" type="email" name="email"><br><br>
         @if ($errors->has('email'))
           <strong>{{$errors->first('email')}}</strong>
         @endif
@@ -57,5 +58,6 @@
     </form>
 
     </form>
+      <script src="js/main.js"></script>
   </body>
 </html>

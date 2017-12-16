@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width= device-width, initial-scale=1">
     <link href="./css/style.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="imagenes/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
     <title> Travels </title>
   </head>
@@ -113,7 +114,7 @@
     <footer>
     <div class="menu-footer">
       <nav>
-      <ul>
+      <ul class="footer">
         <li> <a href="/">  Home </a> </li>
         <li> <a href="malito:instaviaje@gmail.com">  Contactanos! </a> </li>
         <li> <a href="#"> Redes </a> </li>
