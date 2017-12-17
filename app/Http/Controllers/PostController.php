@@ -28,7 +28,7 @@ class PostController extends Controller
 public function destroy($id) {
    $post = \App\Post::find($id);
 
-   $post->delete();
+   $post::destroy($id);
 
    return redirect('/posts');
 }
