@@ -26,10 +26,7 @@
         <a href="/post/{{$post->id}}"><li><p>Mi viaje a {{$post->lugar}}</p></li></a>
         <li>Viaje en {{$post->transporte}}</li>
         <li>{{$post->duracion}}</li>
-        <form action="/" method="post">
-        {{ csrf_field() }}
-        {{ method_field('delete') }}
-        <button type="submit">Borrar</button>
+        
         @endforeach
       </ul>
 
