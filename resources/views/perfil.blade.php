@@ -24,9 +24,8 @@
     <div class="">
       <ul>
         @foreach ($posts as $post)
-        <a href="{{url('/posts')}}"><li><p>Mi viaje a {{$post->lugar}}</p></li></a>
-        <li>Viaje en {{$post->transporte}}</li>
-        <li>{{$post->duracion}}</li>
+        <a href="/post/{{$post->id}}"><li><p>Mi viaje a {{$post->lugar}}</p></li></a>
+
 
         @endforeach
 

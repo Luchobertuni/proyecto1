@@ -19,18 +19,22 @@
 
 
 <br><br>
+<a href="/perfil">Volver a mi perfil</a>
 
     <div class="">
       <h3>Mi viaje a {{$post->lugar}}</h3>
       <ul>
 
         <li>Transporte: {{$post->transporte}}</li>
-        <li>Duacion:{{$post->duracion}} dias</li>
+        <li>Duracion:{{$post->duracion}} dias</li>
+        <li>Presupuesto diario:${{$post->presupuesto}}</li>
+        <li>Comentarios:{{$post->comentarios}}</li>
         <form action="/post/{{$post->id}}" method="post">
         {{ csrf_field() }}
         {{ method_field('delete') }}
         <button type="submit">Borrar</button>
 
+        <button type="button" formaction="/post/{{$post->id}}/edit"><a href="/post/{{$post->id}}/edit">Editar</button></a>
       </ul>
 
   </form>

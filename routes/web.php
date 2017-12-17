@@ -25,12 +25,17 @@ Route::get('/perfil', 'PerfilController@show');
 Route::get('/agregar','PostController@agregar');
 Route::post('/agregar','PostController@store');
 
-Route::get('/posts','PostController@mostrar');
+
 
 Route::get('/post/{id}','PostController@show');
 
 Route::delete('/post/{id}','PostController@destroy');
 
+Route::get('/post/{id}/edit', 'PostController@edit');
+Route::patch('/post/{id}', 'PostController@update');
+
+// Route::get('/perfil', 'PerfilController@edit');
+// Route::patch('/perfil', 'PerfilController@update');
 
 Auth::routes();
 Route::get('/logout', 'Auth\LoginController@logout');

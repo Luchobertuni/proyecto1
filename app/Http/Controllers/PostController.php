@@ -63,4 +63,29 @@ public function destroy($id) {
 
     return redirect('/');
 }
+
+  public function edit($id){
+    $post = \App\Post::find($id);
+
+  	$variables = [
+  		"post" => $post,
+  	];
+
+  	 return view('edit', $variables);
+  }
+
+  public function update(Request $request, $id){
+    $post = \App\Post::find($id);
+
+    $post->lugar = $request->input('lugar');
+    $post->transporte = $request->input('transporte');
+    $post->duracion = $request->input('duracion');
+    $post->presupuesto = $request->input('presupuesto');
+    $post->comentarios = $request->input('comentarios');
+    $post->save();
+
+    return redirect('/post/' . $id);
+  }
+
+
 }

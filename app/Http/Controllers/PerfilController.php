@@ -15,4 +15,11 @@ class PerfilController extends Controller
 
    return view('perfil', $variables);
     }
+
+    // public function edit(){
+    // }
+    //
+    // public function update(){
+    // }
+
 }
