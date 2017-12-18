@@ -10,6 +10,7 @@
   </head>
   <body>
     <header>
+      <div class="conteiner">
         <h1 class="imagen"><a href="/"><img src="imagenes/logo.jpg" alt="logo del sitio"></a></h1>
         <div class="titulo">
             <h2>Insta-Viaje</h2>
@@ -25,14 +26,15 @@
       <ul>
         @foreach ($posts as $post)
         <a href="/post/{{$post->id}}"><li><p>Mi viaje a {{$post->lugar}}</p></li></a>
-
-
         @endforeach
-
       </ul>
-
-  </form>
     </div>
-  </div>
+    <form action="/perfil" method="post">
+    {{ csrf_field() }}
+    {{ method_field('delete') }}
+    <button type="submit">Borrar</button>
+
+    <button type="button" formaction="/post/{{$post->id}}/edit"><a href="/post/{{$post->id}}/edit">Editar</button></a>
+    </div>
   </body>
 </html>
