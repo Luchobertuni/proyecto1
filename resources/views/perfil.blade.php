@@ -29,12 +29,12 @@
         @endforeach
       </ul>
     </div>
-    <form action="/perfil" method="post">
+    {{-- <form action="/perfil" method="post">
     {{ csrf_field() }}
     {{ method_field('delete') }}
     <button type="submit">Borrar</button>
 
-    <button type="button" formaction="/post/{{$post->id}}/edit"><a href="/post/{{$post->id}}/edit">Editar</button></a>
+    <button type="button" formaction="/post/{{$post->id}}/edit"><a href="/post/{{$post->id}}/edit">Editar</button></a> --}}
     </div>
   </body>
 </html>
