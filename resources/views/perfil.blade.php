@@ -15,6 +15,32 @@
         <div class="titulo">
             <h2>Insta-Viaje</h2>
         </div>
+        <div class="menu-usuario">
+        <nav>
+          <ul class="menu2">
+
+              <li><a href="{{url('/logout')}}">Cerrar sesion </a></li>
+
+
+        </ul>
+        </nav>
+        </div>
+
+        </div>
+
+        <div class="menu-principal">
+        <nav >
+          <ul class="menu">
+            <li> <a href="/"> Home </a> </li>
+            <li> <a href=""> Contacto </a> </li>
+            <li> <a href="/faqs"> FaQs </a> </li>
+            <form action="" class="lupa">
+            <li>  <img src="./imagenes/lupa.png" width="20px" height="20px"> <input type="search" name="Buscador" class="buscar" value="buscar">  </li>
+            </form>
+        </ul>
+        </nav>
+      </div>
+
     </header>
     <br><br>
     <p>{{ Auth::user()->first_name}} {{ Auth::user()->last_name}}</p>
